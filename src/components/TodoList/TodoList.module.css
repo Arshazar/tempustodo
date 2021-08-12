@@ -1,0 +1,96 @@
+.list {
+  margin: 1.4em 3em;
+  width: 45.33%;
+  margin: auto;
+  border: 1px solid var(--colour-dark-gray);
+  padding: 2rem;
+  box-shadow: 1px 2px 1px var(--colour-gray);
+  overflow-y: auto;
+  max-height: 80vh;
+}
+.item {
+  display: flex;
+  justify-content: space-around;
+}
+.item a {
+  margin-right: 0.5em;
+  padding: 0.2rem;
+  border-radius: 50%;
+  text-align: center;
+  align-items: center;
+}
+.item a svg {
+  height: 16px;
+  width: 16px;
+}
+.item a:hover {
+  background: var(--colour-gray);
+}
+.textSpan {
+  min-width: 70%;
+  overflow-x: auto;
+}
+.textSpan:focus {
+  outline: none;
+}
+.addButton {
+  border-radius: 50%;
+  border: none;
+  background-color: var(--colour-white);
+}
+.addButton:hover {
+  background-color: var(--colour-gray);
+}
+.optionClick {
+  visibility: 'hidden';
+  border-radius: 50%;
+  padding: 0.2rem;
+  border: none;
+  background: none;
+  color: var(--colour-dark-gray);
+}
+.optionClick:hover {
+  background: var(--colour-gray);
+  cursor: pointer;
+}
+.toolBtn {
+  margin: 0 1rem;
+  border: none;
+  cursor: pointer;
+}
+.spacer {
+  background: var(--colour-gray);
+  height: 0.5px;
+  display: flex;
+  width: 100%;
+  margin: 5px 0;
+}
+
+/*Media Queries*/
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 992px) {
+  .list {
+    width: 46%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .list {
+    width: 63.5%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .list {
+    width: 72%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .list {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .list {
+    width: 98%;
+  }
+}
