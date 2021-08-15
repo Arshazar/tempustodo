@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 
 import s from './TodoItem.module.css'
 import { useTodoList } from '../../hooks'
-import { utils } from '../../utils'
 import { focusOn, edit, remove, setStatus } from '../../actions/todoListActions'
 
 const TodoItem = ({ id, task, done }) => {
@@ -22,11 +21,8 @@ const TodoItem = ({ id, task, done }) => {
   }, [task])
 
   useEffect(() => {
-    const thisFocused = inputRef.current === document.activeElement
-    if (focused === id && !thisFocused) {
-      inputRef.current.focus()
-      utils.moveCaret(inputRef.current)
-    }
+    const focusedEl = inputRef.current === document.activeElement
+    if (focused === id && !focusedEl) inputRef.current.focus()
   }, [focused])
 
   return (
@@ -34,10 +30,10 @@ const TodoItem = ({ id, task, done }) => {
       <div className={s.item}>
         <a href="/">{'\u2022'}</a>
         <div
+          contentEditable
           className={s.textSpan}
           style={{ textDecoration: done ? 'line-through' : 'none' }}
           ref={inputRef}
-          contentEditable
           onInput={() => setText(inputRef.current.innerText)}
           onFocus={() => dispatch(focusOn(id))}
           onBlur={() => {
