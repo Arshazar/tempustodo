@@ -8,31 +8,6 @@
   overflow-y: auto;
   max-height: 80vh;
 }
-.item {
-  display: flex;
-  justify-content: space-around;
-}
-.item a {
-  margin-right: 0.5em;
-  padding: 0.2rem;
-  border-radius: 50%;
-  text-align: center;
-  align-items: center;
-}
-.item a svg {
-  height: 16px;
-  width: 16px;
-}
-.item a:hover {
-  background: var(--colour-gray);
-}
-.textSpan {
-  min-width: 70%;
-  overflow-x: auto;
-}
-.textSpan:focus {
-  outline: none;
-}
 .addButton {
   border-radius: 50%;
   border: none;
@@ -40,30 +15,6 @@
 }
 .addButton:hover {
   background-color: var(--colour-gray);
-}
-.optionClick {
-  visibility: 'hidden';
-  border-radius: 50%;
-  padding: 0.2rem;
-  border: none;
-  background: none;
-  color: var(--colour-dark-gray);
-}
-.optionClick:hover {
-  background: var(--colour-gray);
-  cursor: pointer;
-}
-.toolBtn {
-  margin: 0 1rem;
-  border: none;
-  cursor: pointer;
-}
-.spacer {
-  background: var(--colour-gray);
-  height: 0.5px;
-  display: flex;
-  width: 100%;
-  margin: 5px 0;
 }
 
 /*Media Queries*/

@@ -1,3 +1,4 @@
 import { TodoList } from './TodoList/TodoList'
+import { TodoItem } from './TodoItem/TodoItem'
 
-export { TodoList }
+export { TodoList, TodoItem }
