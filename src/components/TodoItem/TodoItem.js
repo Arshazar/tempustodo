@@ -2,24 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 
 import s from './TodoItem.module.css'
 import { useTodoList } from '../../hooks'
+import { utils } from '../../utils'
 import { focusOn, edit, remove, setStatus } from '../../actions/todoListActions'
-
-function moveCaret(el) {
-  const target = document.createTextNode('')
-  el.appendChild(target)
-  const isTargetFocused = document.activeElement === el
-  if (target !== null && target.nodeValue !== null && isTargetFocused) {
-    var selection = window.getSelection()
-    if (selection !== null) {
-      var range = document.createRange()
-      range.setStart(target, target.nodeValue.length)
-      range.collapse(true)
-      selection.removeAllRanges()
-      selection.addRange(range)
-    }
-    if (el instanceof HTMLElement) el.focus()
-  }
-}
 
 const TodoItem = ({ id, task, done }) => {
   const [text, setText] = useState('')
@@ -41,7 +25,7 @@ const TodoItem = ({ id, task, done }) => {
     const thisFocused = inputRef.current === document.activeElement
     if (focused === id && !thisFocused) {
       inputRef.current.focus()
-      moveCaret(inputRef.current)
+      utils.moveCaret(inputRef.current)
     }
   }, [focused])
 
