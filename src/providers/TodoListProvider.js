@@ -1,12 +1,12 @@
 import React, { createContext, useReducer, useEffect } from 'react'
 import { todoListReducer } from '../reducers/todoListReducer'
-import { updateDB } from '../utils/localStrorage'
+import { updateDB, readDB } from '../utils/localStrorage'
 
 const TodoListContext = createContext()
 const SetTodoListContext = createContext()
 
-const TodoListProvider = ({ children, initialTodoList = [] }) => {
-  const [state, dispatch] = useReducer(todoListReducer, { list: initialTodoList, focused: null })
+const TodoListProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(todoListReducer, { list: readDB() || [], focused: null })
 
   useEffect(() => {
     updateDB(state.list)
