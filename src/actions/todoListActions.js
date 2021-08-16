@@ -1,6 +1,6 @@
 const add = () => ({ type: 'add' })
 
-const remove = (id) => ({ type: 'delete', payload: id })
+const remove = (id) => ({ type: 'remove', payload: id })
 
 const edit = (task) => ({ type: 'edit', payload: task })
 
